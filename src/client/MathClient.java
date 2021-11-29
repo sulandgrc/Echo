@@ -17,15 +17,15 @@ public class MathClient {
             PrintWriter sendToServer = new PrintWriter(s.getOutputStream(), true);
 
             // receive echo back with Scanner
-            Scanner readFromClient = new Scanner(s.getInputStream());
+            Scanner readFromServer = new Scanner(s.getInputStream());
 
             // prompt user
             System.out.print("Enter two numbers separated by a space: ");
             sendToServer.println(console.nextLine());
 
             // receive the echo from the Server
-            while(readFromClient.hasNextLine()){
-                System.out.println(readFromClient.nextLine());
+            while(readFromServer.hasNextLine()){
+                System.out.println(readFromServer.nextLine());
             }
 
         }catch (IOException e){
